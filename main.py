@@ -1,10 +1,12 @@
 from fastapi import FastAPI
-
+from datetime import datetime
 app = FastAPI()
 
 @app.get("/")
 async def root():
-    return {"message": "API connection successful"}
+    return { "status": "success",  # Status operasi
+        "message": "API connection successful",  # Pesan utama
+        "timestamp": datetime.now().isoformat(),}
 
 app.include_router(
     __import__("app.src.routes.check", fromlist=["router"]).router, 
