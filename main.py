@@ -4,8 +4,8 @@ app = FastAPI()
 
 @app.get("/")
 async def root():
-    return { "status": "success",  # Status operasi
-        "message": "API connection successful",  # Pesan utama
+    return { "status": "success",  
+        "message": "API connection successful",  
         "timestamp": datetime.now().isoformat(),}
 
 app.include_router(
