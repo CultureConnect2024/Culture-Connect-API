@@ -116,6 +116,7 @@ For handling login user account.
 
 **Response:**
 - **200 OK** - If the login sucessfully.
+- **401 Unauthorized** - If the login failt with Incorrect username or password .
 - **500 Internal Server Error** - If the database connection fails or login fails.
 
 
@@ -146,6 +147,7 @@ For handling logout user account.
 
 **Response:**
 - **200 OK** - If the logout sucessfully.
+- **404 NOT FOUND** - If the session was not found.
 - **500 Internal Server Error** - If the database connection fails or logout fails.
 
 
