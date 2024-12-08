@@ -199,8 +199,7 @@ For handling get all users data.
 #### `GET /users/{session_id}`
 Get User by Session ID
 
-**Path Parameter**
-session_id (string): The unique session ID.
+Path Parameter :  `session_id: The unique session ID.`
 
 **Response Code:**
 - **200 OK** - If successfully retreave user data base on session.
