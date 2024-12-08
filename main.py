@@ -19,5 +19,11 @@ app.include_router(
     prefix="/auth", 
     tags=["Auth"]
 )
+
+app.include_router(
+    __import__("app.src.routes.users", fromlist=["router"]).router, 
+    prefix="/users", 
+    tags=["Users"]
+)
 # app.include_router(check_router, prefix="/check", tags=["Check"])
 # app.include_router(auth_router, prefix="/auth", tags=["Check"])
