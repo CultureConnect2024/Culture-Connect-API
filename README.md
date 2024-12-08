@@ -166,5 +166,60 @@ For handling logout user account.
 }
 
  ```
+### 4. Users Data Endpoints
+#### `GET /users`
+For handling get all users data.
 
-  
+**Response:**
+- **200 OK** - If successfully retreave all users.
+- **404 NOT FOUND** - If no users in the database.
+- **500 Internal Server Error** - If the database connection fails or cant retreive all users data.
+
+  Response:
+  ```bash
+
+   {
+      "status": "success",
+      "data": [
+         {
+               "id": 1,
+               "username": "example",
+               "email": "example@example.com"
+         },
+         {
+               "id": 2,
+               "username": "example",
+               "email": "example@example.com"
+         }
+      ],
+      "time": "2024-12-06T12:40:56.789123Z"
+   }
+   ```
+
+#### `GET /users/{session_id}`
+Get User by Session ID
+
+**Path Parameter**
+session_id (string): The unique session ID.
+
+**Response Code:**
+- **200 OK** - If successfully retreave user data base on session.
+- **404 NOT FOUND** - Invalid session ID or user not found
+- **500 Internal Server Error** - If the database connection fails or cant retreive user data.
+
+Response:
+ ```bash
+   {
+      "status": "success",
+      "data": 
+      {
+        "id": 1,
+        "username": "example",
+        "email": "example@example.com" 
+      },
+
+      "time": "2024-12-06T12:34:56.789123Z"
+   }
+
+   ```
+   
